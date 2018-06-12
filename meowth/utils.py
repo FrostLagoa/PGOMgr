@@ -135,43 +135,43 @@ def sanitize_channel_name(name):
 
 async def get_raid_help(prefix, avatar, user=None):
     helpembed = discord.Embed(colour=discord.Colour.lighter_grey())
-    helpembed.set_author(name="Raid Coordination Help", icon_url=avatar)
+    helpembed.set_author(name="Ajuda na Organização de Raid", icon_url=avatar)
     helpembed.add_field(
-        name="Key",
-        value="<> denote required arguments, [] denote optional arguments",
+        name="Chave",
+        value="<> denota argumentos obrigatórios, [] denota argumentos opcionais",
         inline=False)
     helpembed.add_field(
-        name="Raid MGMT Commands",
+        name="Comando",
         value=(
-            f"`{prefix}raid <species>`\n"
-            f"`{prefix}weather <weather>`\n"
-            f"`{prefix}timerset <minutes>`\n"
-            f"`{prefix}starttime <time>`\n"
-            "`<google maps link>`\n"
-            "**RSVP**\n"
-            f"`{prefix}(i/c/h)...\n"
+            f"`{prefix}raid <espécies>`\n"
+            f"`{prefix}clima <clima>`\n"
+            f"`{prefix}tempo <minutos>`\n"
+            f"`{prefix}comeca <time>`\n"
+            "`<link do google maps>`\n"
+            "**Confirmação de presença**\n"
+            f"`{prefix}(i/ac/c)...\n"
             "[total]...\n"
-            "[team counts]`\n"
-            "**Lists**\n"
-            f"`{prefix}list [status]`\n"
-            f"`{prefix}list [status] tags`\n"
-            f"`{prefix}list teams`\n\n"
-            f"`{prefix}starting [team]`"))
+            "[contagem por time]`\n"
+            "**Listas**\n"
+            f"`{prefix}lista [status]`\n"
+            f"`{prefix}lista [status] tags`\n"
+            f"`{prefix}lista times`\n\n"
+            f"`{prefix}comeca [time]`"))
     helpembed.add_field(
-        name="Description",
+        name="Descrição",
         value=(
-            "`Hatches Egg channel`\n"
-            "`Sets in-game weather`\n"
-            "`Sets hatch/raid timer`\n"
-            "`Sets start time`\n"
-            "`Updates raid location`\n\n"
-            "`interested/coming/here`\n"
-            "`# of trainers`\n"
-            "`# from each team (ex. 3m for 3 Mystic)`\n\n"
-            "`Lists trainers by status`\n"
-            "`@mentions trainers by status`\n"
-            "`Lists trainers by team`\n\n"
-            "`Moves trainers on 'here' list to a lobby.`"))
+            "`Abre canal de raid ou ovo`\n"
+            "`Define o clima atual no jogo`\n"
+            "`Define o tempo pro ovo chocar ou pra raid acabar`\n"
+            "`Define o início da raid`\n"
+            "`Atualiza a localização da raid`\n\n"
+            "`interessado/acaminho/cheguei`\n"
+            "`quantidade de treinadores`\n"
+            "`quantidade de cada time (ex. 3m para 3 Mystic)`\n\n"
+            "`Listas de treinadores por status`\n"
+            "`@menciona os treinadores por status`\n"
+            "`Listas de treinadores por time`\n\n"
+            "`Move os treinadores da lista de 'cheguei' para a sala.`"))
     if not user:
         return helpembed
     await user.send(embed=helpembed)

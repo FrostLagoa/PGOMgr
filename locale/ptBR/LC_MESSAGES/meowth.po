@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-08 14:40-0300\n"
-"PO-Revision-Date: 2018-06-09 01:33-0300\n"
+"PO-Revision-Date: 2018-06-11 21:44-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2286,7 +2286,7 @@ msgstr "{0}, removi {1} Pokémon da sua lista de desejados."
 #: __main__.py:6576 __main__.py:6739 __main__.py:6743 __main__.py:6757
 #: __main__.py:6839
 msgid "%I:%M %p (%H:%M)"
-msgstr "%I:%M %p (%H:%M)"
+msgstr "%H:%M"
 
 #: __main__.py:3937 __main__.py:3953
 msgid ""
@@ -2766,11 +2766,11 @@ msgstr ""
 #: __main__.py:5147 __main__.py:5271 __main__.py:6745 __main__.py:6751
 #: __main__.py:6753 __main__.py:6755
 msgid "%B %d at %I:%M %p (%H:%M)"
-msgstr "%B %d at %I:%M %p (%H:%M)"
+msgstr "%d/%m as %H:%M"
 
 #: __main__.py:4523
 msgid "Ends on %B %d at %I:%M %p (%H:%M)"
-msgstr "Acaba em %B %d as %I:%M %p (%H:%M)"
+msgstr "Acaba em %d/%m as %H:%M"
 
 #: __main__.py:4546
 msgid ""
@@ -3105,7 +3105,7 @@ msgstr "raid"
 
 #: __main__.py:5001 __main__.py:5567
 msgid "end"
-msgstr "termina"
+msgstr "terminar"
 
 #: __main__.py:5003
 msgid "This {raidtype}'s timer has already expired as of {expiry_time}!"
@@ -3187,7 +3187,7 @@ msgstr "Acaba em {end}"
 
 #: __main__.py:5142
 msgid "%B %d at %I:%M %p (%H:%M) | "
-msgstr "%B %d at %I:%M %p (%H:%M) | "
+msgstr "%d/%m as %H:%M | "
 
 #: __main__.py:5142
 msgid "Hatches on {expiry}"
@@ -3277,7 +3277,7 @@ msgstr "encontro"
 
 #: __main__.py:5448
 msgid "Ends on %B %d at %I:%M %p"
-msgstr "Acaba em %B %d at %I:%M %p"
+msgstr "Acaba em %d/%m as %H:%M"
 
 #: __main__.py:5491
 msgid "Meowth! I couldn't recognize this as a raid channel!"

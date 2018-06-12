@@ -129,7 +129,7 @@ def missing_arg_msg(ctx):
     arg_num = len(ctx.args) - 1
     sig.remove('ctx')
     args_missing = sig[arg_num:]
-    msg = _("Meowth! I'm missing some details! Usage: {prefix}{command}").format(prefix=prefix, command=command)
+    msg = _("Miau! Preciso de mais detalhes! Uso: {prefix}{command}").format(prefix=prefix, command=command)
     for a in sig:
         if kwonlydefaults:
             if a in kwonlydefaults.keys():
@@ -162,63 +162,63 @@ def custom_error_handling(bot, logger):
         elif isinstance(error, commands.CheckFailure):
             pass
         elif isinstance(error, TeamSetCheckFail):
-            msg = _('Meowth! Team Management is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Gerenciamento de times não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, WantSetCheckFail):
-            msg = _('Meowth! Pokemon Notifications are not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Notificação de Pokémon não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, WildSetCheckFail):
-            msg = _('Meowth! Wild Reporting is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Aviso de Pokémon selvagem não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, ReportCheckFail):
-            msg = _('Meowth! Reporting is not enabled for this channel. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Aviso não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, RaidSetCheckFail):
-            msg = _('Meowth! Raid Management is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Gerenciamento de raid não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, EXRaidSetCheckFail):
-            msg = _('Meowth! EX Raid Management is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Gerenciamento de raid EX não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, ResearchSetCheckFail):
-            msg = _('Meowth! Research Reporting is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Aviso de missões não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, MeetupSetCheckFail):
-            msg = _('Meowth! Meetup Reporting is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Aviso de encontros não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, ArchiveSetCheckFail):
-            msg = _('Meowth! Channel Archiving is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Arquivamento de canais não está disponível nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, InviteSetCheckFail):
-            msg = _('Meowth! EX Raid Invite is not enabled on this server. **{prefix}{cmd_name}** is unable to be used.').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Convite para raid EX não está habilitado nesse servidor. **{prefix}{cmd_name}** está indisponível para uso.').format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, CityChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('em um dos seguintes canais de região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -230,12 +230,8 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, WantChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in the following channel').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um dos seguintes canais:').format(cmd_name=ctx.invoked_with, prefix=prefix)
             want_channels = bot.guild_dict[guild.id]['configure_dict']['want']['report_channels']
-            if len(want_channels) > 1:
-                msg += _('s:\n')
-            else:
-                msg += _(': ')
             counter = 0
             for c in want_channels:
                 channel = discord.utils.get(guild.channels, id=c)
@@ -251,12 +247,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, RaidChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in a Raid channel. Use **{prefix}list** in any ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de raid. Use **{prefix}lista** em qualquer ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('Region report channel to see active raids.')
+                msg += _('canal de raid de região para ver as raids ativas.')
             else:
-                msg += _('of the following Region channels to see active raids:')
+                msg += _('dos seguintes canais de raid para ver as raids ativas:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -268,12 +264,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, EggChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in an Egg channel. Use **{prefix}list** in any ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de ovo de raid. Use **{prefix}lista** em qualquer ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('Region report channel to see active raids.')
+                msg += _('canal de aviso de raid para ver as raids ativas.')
             else:
-                msg += _('of the following Region channels to see active raids:')
+                msg += _('dos seguintes canais de região para ver as raids ativas:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -284,13 +280,13 @@ def custom_error_handling(bot, logger):
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, NonRaidChannelCheckFail):
-            msg = _("Meowth! **{prefix}{cmd_name}** can't be used in a Raid channel.").format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _("Miau! **{prefix}{cmd_name}** não pode ser usado em um canal de raid.").format(cmd_name=ctx.invoked_with, prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, ActiveRaidChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in an Active Raid channel. Use **{prefix}list** in any ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de raid ativa. Use **{prefix}lista** em qualquer ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             try:
                 egg_check = bot.guild_dict[guild.id]['raidchannel_dict'][ctx.channel.id].get('type',None)
@@ -299,9 +295,9 @@ def custom_error_handling(bot, logger):
                 egg_check = ""
                 meetup = False
             if len(city_channels) > 10:
-                msg += _('Region report channel to see active channels.')
+                msg += _('canal de aviso por região para ver os canais ativos.')
             else:
-                msg += _('of the following Region channels to see active channels:')
+                msg += _('dos seguintes canais por região para ver os canais ativos:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -309,13 +305,13 @@ def custom_error_handling(bot, logger):
                     else:
                         msg += '\n#deleted-channel'
             if egg_check == "egg" and not meetup:
-                msg += _('\nThis is an egg channel. The channel needs to be activated with **{prefix}raid <pokemon>** before I accept commands!').format(prefix=prefix)
+                msg += _('\nEsse é um canal de ovo de raid. O canal precisa ficar ativo usando o comando **{prefix}raid <pokemon>** antes de eu aceitar comandos!').format(prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, ActiveChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in an Active channel. Use **{prefix}list** in any ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal ativo. Use **{prefix}lista** em qualquer ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             try:
                 egg_check = bot.guild_dict[guild.id]['raidchannel_dict'][ctx.channel.id].get('type',None)
@@ -324,9 +320,9 @@ def custom_error_handling(bot, logger):
                 egg_check = ""
                 meetup = False
             if len(city_channels) > 10:
-                msg += _('Region report channel to see active raids.')
+                msg += _('canal de aviso por região para ver as raids ativas')
             else:
-                msg += _('of the following Region channels to see active raids:')
+                msg += _('dos seguintes canais por região para ver as raids ativas:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -334,18 +330,18 @@ def custom_error_handling(bot, logger):
                     else:
                         msg += '\n#deleted-channel'
             if egg_check == "egg" and not meetup:
-                msg += _('\nThis is an egg channel. The channel needs to be activated with **{prefix}raid <pokemon>** before I accept commands!').format(prefix=prefix)
+                msg += _('\nEsse é um canal de ovo de raid. O canal precisa ficar ativo usando o comando **{prefix}raid <pokemon>** antes de eu aceitar comandos!').format(prefix=prefix)
             error = await ctx.channel.send(msg)
             await asyncio.sleep(10)
             await delete_error(ctx.message, error)
         elif isinstance(error, CityRaidChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in either a Raid channel or ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de raid ou ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('em um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -357,12 +353,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, RegionEggChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in either a Raid Egg channel or ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de ovo de raid ou ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['raid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -374,12 +370,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, RegionExRaidChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in either a EX Raid channel or one of the following region channels:').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** raid EX em um dos seguintes canais por região:').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['exraid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -391,12 +387,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, ExRaidChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in a EX Raid channel. Use **{prefix}list** in any of the following region channels to see active raids:').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em um canal de raid EX. Use **{prefix}lista** em qualquer um dos seguintes canais por região:').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['exraid']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -408,12 +404,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, ResearchReportChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['research']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -425,12 +421,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error, MeetupReportChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['meetup']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:
@@ -442,12 +438,12 @@ def custom_error_handling(bot, logger):
             await delete_error(ctx.message, error)
         elif isinstance(error,WildReportChannelCheckFail):
             guild = ctx.guild
-            msg = _('Meowth! Please use **{prefix}{cmd_name}** in ').format(cmd_name=ctx.invoked_with, prefix=prefix)
+            msg = _('Miau! Por favor use **{prefix}{cmd_name}** em ').format(cmd_name=ctx.invoked_with, prefix=prefix)
             city_channels = bot.guild_dict[guild.id]['configure_dict']['wild']['report_channels']
             if len(city_channels) > 10:
-                msg += _('a Region report channel.')
+                msg += _('um canal de aviso por região.')
             else:
-                msg += _('one of the following region channels:')
+                msg += _('um dos seguintes canais por região:')
                 for c in city_channels:
                     channel = discord.utils.get(guild.channels, id=c)
                     if channel:

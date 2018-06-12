@@ -24,19 +24,17 @@ class GymMatching:
     async def gym_match_test(self, ctx, gym_name):
         gyms = self.get_gyms(ctx.guild.id)
         if not gyms:
-            await ctx.send('Gym matching has not been set up for this server.')
+            await ctx.send('Correspondência de ginásios não foi definida para esse servidor.')
             return
         match, score = self.gym_match(gym_name, gyms)
         if match:
             gym_info = gyms[match]
             coords = gym_info['coordinates']
-            notes = gym_info.get('notes', 'No notes for this gym.')
-            gym_info_str = (f"**Coordinates:** {coords}\n"
-                            f"**Notes:** {notes}")
-            await ctx.send(f"Successful match with `{match}` "
-                           f"with a score of `{score}`\n{gym_info_str}")
+            gym_info_str = (f"**Coordenadas:** {coords}")
+            await ctx.send(f"Correspondência bem-sucedida `{match}` "
+                           f"com uma pontuação de `{score}`\n{gym_info_str}")
         else:
-            await ctx.send("No match found.")
+            await ctx.send("Nenhuma correspondência encontrada.")
 
 def setup(bot):
     bot.add_cog(GymMatching(bot))

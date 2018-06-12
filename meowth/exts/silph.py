@@ -202,15 +202,15 @@ class SilphCard:
         silph_icon = "https://assets.thesilphroad.com/img/snoo_sr_icon.png"
 
         if not self.discord_name:
-            connected_str = "\u2754 **Discord Not Provided**"
+            connected_str = "\u2754 **Discord não fornecido**"
         else:
             connected_str = (
-                f"\u2611 **Connected to Discord:** {self.discord_name}")
+                f"\u2611 **Conectado ao Discord:** {self.discord_name}")
 
         embed = discord.Embed(
-            title='Playstyle', colour=colour, description=(
-                f"{self.playstyle}, working on {self.goal}.\n"
-                f"Active around {self.home_region}.\n\n"
+            title='Estilo de jogo', colour=colour, description=(
+                f"{self.playstyle}, trabalhando em {self.goal}.\n"
+                f"Ativo em {self.home_region}.\n\n"
                 f"{connected_str}"))
 
         embed.set_thumbnail(url=self.avatar_url)
@@ -218,34 +218,34 @@ class SilphCard:
         embed.set_author(
             name=(
                 f"{self.title} {self.game_name} - "
-                f"Level {self.level} {self.team}"),
+                f"Nível {self.level} {self.team}"),
             url=self.url,
             icon_url=hyperlink_icon)
 
         embed.add_field(
-            name="__Silph Stats__",
+            name="__Estatísticas na Silph__",
             value=(
-                f"**Joined:** {self.joined(utc_offset)}\n"
-                f"**Badges:** {self.badge_count}\n"
+                f"**Início:** {self.joined(utc_offset)}\n"
+                f"**Insígnias:** {self.badge_count}\n"
                 f"**Check-ins:** {self.checkin_count}\n"
-                f"**Handshakes:** {self.handshakes}\n"
-                f"**Migrations:** {self.migrations}"),
+                f"**Cumprimentos:** {self.handshakes}\n"
+                f"**Migrações:** {self.migrations}"),
             inline=True)
 
         embed.add_field(
-            name="__Game Stats__",
+            name="__Estatísticas no Jogo__",
             value=(
-                f"**Name:** {self.game_name}\n"
-                f"**Team:** {self.team}\n"
-                f"**Level:** {self.level}\n"
-                f"**Pokedex:** {self.pd_count}\n"
-                f"**Raids:** {self.raid_avg}/week"),
+                f"**Nome:** {self.game_name}\n"
+                f"**Time:** {self.team}\n"
+                f"**Nível:** {self.level}\n"
+                f"**Pokédex:** {self.pd_count}\n"
+                f"**Raids:** {self.raid_avg}/semana"),
             inline=True)
 
         embed.set_footer(
             text=(
-                f"Silph Road Travelers Card - ID{self.id} - "
-                f"Updated {self.modified(utc_offset)}"),
+                f"Cartão de Viajante da Silph Road - ID{self.id} - "
+                f"Atualizado em {self.modified(utc_offset)}"),
             icon_url=silph_icon)
 
         return embed
@@ -291,12 +291,12 @@ class Silph:
 
     @commands.command()
     async def silphcard(self, ctx, silph_user: str = None):
-        """Displays a user's Silph Road Trainer Card."""
+        """Mostra o cartão de treinador da Silph Road de um usuário."""
         guild_data = ctx.bot.guild_dict[ctx.guild.id]
         if not silph_user:
             silph_user = guild_data['trainers'].setdefault(ctx.author.id, {}).get('silphid', None)
             if not silph_user:
-                return await ctx.error(f"You haven't setup a silphcard!")
+                return await ctx.error(f"Você não definiu um cartão silph!")
         else:
             if ctx.message.mentions:
                 mentioned = ctx.message.mentions[0]
@@ -304,7 +304,7 @@ class Silph:
                     mentioned.id, {}).get('silphid', None)
                 if not silph_user:
                     return await ctx.error(
-                        f"{mentioned.display_name} hasn't setup a silphcard!")
+                        f"{mentioned.display_name} não definiu um cartão silph!")
         async with ctx.typing():
             card = await SilphCard.get_trainer_card(silph_user)
         try:
@@ -314,7 +314,7 @@ class Silph:
         if card:
             await ctx.send(embed=card.embed(offset))
         else:
-            await ctx.error(f'Silph Card for {silph_user} not found.')
+            await ctx.error(f'Cartão Silph do usuário {silph_user} não encontrado.')
 
 def setup(bot):
     bot.add_cog(Silph(bot))
