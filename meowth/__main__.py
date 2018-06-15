@@ -133,7 +133,7 @@ Meowth.config = config
 Meowth.pkmn_info_path = pkmn_path
 Meowth.raid_json_path = raid_path
 
-default_exts = ['datahandler', 'tutorial', 'silph', 'utilities']
+default_exts = ['datahandler', 'tutorial', 'silph', 'utilities', 'gymmatching']
 
 for ext in default_exts:
     try:
@@ -4407,7 +4407,7 @@ async def _eggassume(args, raid_channel, author=None):
     await raid_channel.send(_('{roletest}Meowth! This egg will be assumed to be {pokemon} when it hatches!').format(roletest=roletest,pokemon=entered_raid.title()))
     if str(egglevel) in guild_dict[raid_channel.guild.id]['configure_dict']['counters']['auto_levels']:
         ctrs_dict = await _get_generic_counters(raid_channel.guild, entered_raid, weather)
-        ctrsmsg = "Here are the best counters for the raid boss in currently known weather conditions! Update weather with **!weather**. If you know the moveset of the boss, you can react to this message with the matching emoji and I will update the counters."
+        ctrsmsg = "Aqui estão os melhores atacantes para o chefe da raid nas atuais condições climáticas! Atualize o clima usando **!clima**. Se você sabe a combinação de golpes do chefe, você pode reajir a essa mensagem com o emoji correspondente e eu irei atualizar os atacantes."
         ctrsmessage = await raid_channel.send(content=ctrsmsg,embed=ctrs_dict[0]['embed'])
         ctrsmessage_id = ctrsmessage.id
         await ctrsmessage.pin()
@@ -4564,7 +4564,7 @@ async def _eggtoraid(entered_raid, raid_channel, author=None):
         egg_report = None
     if str(egglevel) in guild_dict[raid_channel.guild.id]['configure_dict']['counters']['auto_levels'] and not eggdetails.get('pokemon', None):
         ctrs_dict = await _get_generic_counters(raid_channel.guild, entered_raid, weather)
-        ctrsmsg = "Here are the best counters for the raid boss in currently known weather conditions! Update weather with **!weather**. If you know the moveset of the boss, you can react to this message with the matching emoji and I will update the counters."
+        ctrsmsg = "Aqui estão os melhores atacantes para o chefe da raid nas atuais condições climáticas! Atualize o clima usando **!clima**. Se você sabe a combinação de golpes do chefe, você pode reajir a essa mensagem com o emoji correspondente e eu irei atualizar os atacantes."
         ctrsmessage = await raid_channel.send(content=ctrsmsg,embed=ctrs_dict[0]['embed'])
         ctrsmessage_id = ctrsmessage.id
         await ctrsmessage.pin()

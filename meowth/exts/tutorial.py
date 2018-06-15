@@ -357,7 +357,7 @@ class Tutorial:
 			"da missão. Você também pode usar "
 			f"**{ctx.prefix}missao <pokestop>, <missão>, <recompensa>** para "
 			"enviar o aviso todo de uma vez.\n\n"
-			f"Teste-o digitando `{ctx.prefix}missao")
+			f"Teste-o digitando `{ctx.prefix}missao`")
 
         # wait for research command completion
         try:
